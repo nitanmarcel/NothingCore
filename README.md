@@ -13,7 +13,7 @@ Install Nothing apps on any device.
 - Reboot.
 - Enable NothingCore module for both Nothing Launcher and Weather application.
 - Update all the Nothing apps to the latest version via PlayStore.
-  - Wait a few minutes if you can't see the apps on PlayStore.
+  - Clear PlayStore cache if you can't see NothingOS apps.
   - Some apps can't be installed from PlayStore, use apkmirror instead.
 
 What's working:
