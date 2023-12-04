@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <feature name="com.nothing.feature" />
+    <feature name="com.nothing.launcher.V1_5_data_compat"/>
+    <feature name="com.nothing.feature.OS.V2_0"/>
+    <feature name="com.nothing.feature.ntwidget.V1_2"/>
+</permissions>

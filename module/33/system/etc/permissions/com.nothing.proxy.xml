@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.nothing.proxy">
+        <permission name="android.permission.DEVICE_POWER"/>
+    </privapp-permissions>
+</permissions>
