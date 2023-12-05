@@ -1,6 +1,6 @@
 id=nothing_core
 name=Nothing Apps for any device
-version=0.0.1
+version=0.0.2
 author=nitanmarcel
 description=Install NothingOS apps on any device
 updateJson=https://raw.githubusercontent.com/nitanmarcel/NothingCore/main/update.json
