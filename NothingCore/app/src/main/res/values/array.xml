@@ -3,5 +3,6 @@
     <string-array name="scope">
         <item>com.nothing.launcher</item>
         <item>com.nothing.weather</item>
+        <item>com.sunbird.apps.nothing</item>
     </string-array>
 </resources>
