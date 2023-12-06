@@ -48,6 +48,7 @@ class EntryPoint : IXposedHookLoadPackage {
 
             if (!jarInjectBlacklist.contains(lpparam.packageName))
             {
+                XposedBridge.log("[NothingCore/$SDK] injecting framework overrides")
                 try {
                     val jarPath = "/system/framework/not-a-framework.jar"
 
@@ -66,6 +67,7 @@ class EntryPoint : IXposedHookLoadPackage {
 
                 // Other apps might crash upon loading ConfigLoader due to conflicts with their own class.
                 if (lpparam.packageName != "com.nothing.launcher") {
+                    XposedBridge.log("[NothingCore] disabling ConfigLoader for ${lpparam.packageName}")
                     XposedBridge.hookAllMethods(Class::class.java, "forName", object : XC_MethodHook() {
                         @Throws(Throwable::class)
                         override fun beforeHookedMethod(param: MethodHookParam) {
@@ -78,18 +80,21 @@ class EntryPoint : IXposedHookLoadPackage {
             }
 
             val build = XposedHelpers.findClass("android.os.Build", lpparam.classLoader)
+            XposedBridge.log("[NothingCore/$SDK] overriding MANUFACTURER prop to nothing")
             XposedHelpers.setStaticObjectField(build, "MANUFACTURER", "nothing")
+            XposedBridge.log("[NothingCore/$SDK] overriding MODEL prop to A065")
             XposedHelpers.setStaticObjectField(build, "MODEL", "A065")
 
             if (unsupportedApps.contains(lpparam.packageName))
             {
+                XposedBridge.log("[NothingCore/$SDK] unuspported app ${lpparam.packageName}")
                 XposedHelpers.findAndHookMethod(
                     Activity::class.java, "onCreate",
                     Bundle::class.java, object : XC_MethodHook() {
                         override fun afterHookedMethod(param: MethodHookParam?) {
                             val activity = param!!.thisObject as Activity
                             val context: Context = activity
-                            Toast.makeText(context, "NothingCore: Unsupported", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "[NothingCore]: Unsupported", Toast.LENGTH_SHORT).show();
                         }
                     }
                 )
@@ -99,6 +104,7 @@ class EntryPoint : IXposedHookLoadPackage {
                 // Patches for Android 14
                 if (lpparam.packageName == "com.nothing.launcher" && SDK == 34)
                 {
+                    XposedBridge.log("[NothingCore/$SDK] patching SimpleBroadcastReceiver.registerReceiver for com.nothing.launcher ")
                     XposedHelpers.findAndHookMethod(
                         "com.android.launcher3.util.SimpleBroadcastReceiver",
                         lpparam.classLoader,
@@ -195,10 +201,10 @@ class EntryPoint : IXposedHookLoadPackage {
                                 )
 
                                 if (packageName == "com.nothing.launcher") {
-                                    grantInstallOrRuntimePermission(uidState, mRegistry,
+                                    grantInstallOrRuntimePermission(packageName, uidState, mRegistry,
                                         "android.permission.MANAGE_ACTIVITY_TASKS"
                                     )
-                                    grantInstallOrRuntimePermission(uidState, mRegistry,
+                                    grantInstallOrRuntimePermission(packageName, uidState, mRegistry,
                                         "android.permission.PACKAGE_USAGE_STATS")
                                 }
                             }
@@ -211,13 +217,13 @@ class EntryPoint : IXposedHookLoadPackage {
         return
     }
 
-    private fun grantInstallOrRuntimePermission(uidState: Any,
+    private fun grantInstallOrRuntimePermission(packageName: String, uidState: Any,
         registry: Any, permission: String
     ) {
         XposedHelpers.callMethod(
             uidState, "grantPermission",
             XposedHelpers.callMethod(registry, "getPermission", permission)
         )
-        XposedBridge.log("Allowing permission")
+        XposedBridge.log("[NothingCore/$SDK] granting $permission to $packageName")
     }
 }
