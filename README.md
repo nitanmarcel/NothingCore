@@ -13,8 +13,8 @@ Install Nothing apps on any device.
 - Flash via Magisk/KernelSU.
    - Official Magisk or KernelSU is recommended
 - Reboot.
-- Enable NothingCore module for Nothing Launcher and Weather application.
-  - Android 14 users might need to also enable the module for System framework.
+- Enable NothingCore module for Nothing Launcher, Weather and System framework.
+- Reboot one more time to fix launcher permissions.
 - Update all the Nothing apps to the latest version via PlayStore.
   - Clear PlayStore cache if you can't see NothingOS apps.
   - Some apps can't be installed from PlayStore, use apkmirror instead.
@@ -22,6 +22,7 @@ Install Nothing apps on any device.
 What's working:
 - Everything except the Camera app.
 - If an app is not working try to enable the NothingCore module for that application.
+- This module doesn't replace/add any new fonts. Some apps might use your default system font.
 
 ## Compiling
 
