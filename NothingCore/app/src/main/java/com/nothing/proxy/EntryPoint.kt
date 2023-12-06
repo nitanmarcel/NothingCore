@@ -207,6 +207,9 @@ class EntryPoint : IXposedHookLoadPackage {
                                     grantInstallOrRuntimePermission(packageName, uidState, mRegistry,
                                         "android.permission.PACKAGE_USAGE_STATS")
                                 }
+                                    // Nothing didn't signed the Android 14 apk with the android keys, resulting in this permission not being granted by the system.
+                                    grantInstallOrRuntimePermission(packageName, uidState, mRegistry,
+                                        "android.permission.DEVICE_POWER")
                             }
                         }
                     })
