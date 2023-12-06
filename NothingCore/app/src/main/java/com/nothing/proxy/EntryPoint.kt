@@ -198,6 +198,8 @@ class EntryPoint : IXposedHookLoadPackage {
                                     grantInstallOrRuntimePermission(uidState, mRegistry,
                                         "android.permission.MANAGE_ACTIVITY_TASKS"
                                     )
+                                    grantInstallOrRuntimePermission(uidState, mRegistry,
+                                        "android.permission.PACKAGE_USAGE_STATS")
                                 }
                             }
                         }
