@@ -4,5 +4,6 @@
         <item>com.nothing.launcher</item>
         <item>com.nothing.weather</item>
         <item>com.sunbird.apps.nothing</item>
+        <item>android</item>
     </string-array>
 </resources>

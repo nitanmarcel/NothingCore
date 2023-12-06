@@ -9,9 +9,12 @@ Install Nothing apps on any device.
 
 ## Installation
 
+- AOSP based ROM. OEM ROMs might not be able to run the launcher. Same goes for a few custom ROMs.
 - Flash via Magisk/KernelSU.
+   - Official Magisk or KernelSU is recommended
 - Reboot.
-- Enable NothingCore module for both Nothing Launcher and Weather application.
+- Enable NothingCore module for Nothing Launcher and Weather application.
+  - Android 14 users might need to also enable the module for System framework.
 - Update all the Nothing apps to the latest version via PlayStore.
   - Clear PlayStore cache if you can't see NothingOS apps.
   - Some apps can't be installed from PlayStore, use apkmirror instead.
