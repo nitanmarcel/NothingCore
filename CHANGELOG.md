@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+<!-- insertion marker -->
+## [1.0.2](https://github.com/nitanmarcel/NothingCore/releases/tag/1.0.2) - 2023-12-07
+
+<small>[Compare with 1.0.1](https://github.com/nitanmarcel/NothingCore/compare/1.0.1...1.0.2)</small>
+
+### Fixed
+
+- fix: update EntryPoint class to fix permission granting issue and increment version to 1.0.2 ([27b5016](https://github.com/nitanmarcel/NothingCore/commit/27b5016bff9d5b28a4c157e4d17609ecfea31d99) by Marcel Alexandru Nitan).
+
 ## [1.0.1](https://github.com/nitanmarcel/NothingCore/releases/tag/1.0.1) - 2023-12-06
 
 <small>[Compare with 0.0.1](https://github.com/nitanmarcel/NothingCore/compare/0.0.1...1.0.1)</small>
