@@ -1,0 +1,5 @@
+id=nothing_core_provider
+name=Nothing Core Launcher provider
+version=1.0
+author=nitanmarcel
+description=Addon for NothingCore, Set Nothing Launcher as recent provider.
