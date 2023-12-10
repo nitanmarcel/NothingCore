@@ -31,3 +31,9 @@ What's working:
 - Copy the output apk to module/system/priv-app/NothingCore/NothingCore.apk
 - Copy the output apk to module/system/framework/not-a-framework.jar
 - Zip contents inside module folder and follow the installation instructions above
+
+## Licensing
+
+The core source code, labeled as NothingCore, alongside specific components of the module, is released under the permissive MIT License. However, it's important to note that applications (apps), XML files, and fonts included in this project are property of their respective owners and are not covered by the MIT License. Each of these files may be subject to their own individual licenses or copyright terms.
+
+The owners of these non-MIT-licensed files—apps, XML files, and fonts—retain full rights to their intellectual property. If you are an owner of any such file and object to its inclusion in this project, or if you believe the file should not be distributed within this project framework for any reason, you have the right to request its removal. We respect intellectual property rights and are committed to addressing such concerns promptly and in accordance with legal and ethical practices. To request the removal of your files, please reach out to us with valid proof of ownership and specific details about the files in question.
