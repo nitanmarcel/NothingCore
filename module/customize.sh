@@ -81,21 +81,3 @@ if [ -f "/system/etc/fonts.xml" ]; then
         > "$XML"
     echo "</familyset>" >> "$XML"
 fi
-
-if [ -f "/product/etc/fonts_customization.xml" ]; then
-    mkdir -p "$MODPATH/system/product/etc"
-    
-    XML="$MODPATH/fonts_customization.xml"
-    if [ ! -f "$XML" ]; then            
-            cp -af "/product/etc/fonts_customization.xml" "$XML"
-    fi
-
-    cp -af "$XML" "$MODPATH/system/product/etc/fonts_customization.xml"
-    XML="$MODPATH/system/product/etc/fonts_customization.xml"
-
-    awk -v var="$FONTS_XML" \
-        '/<\/fonts-modification>/{print var; next}1' "/product/etc/fonts_customization.xml" \
-        > "$XML"
-    echo "</fonts-modification>" >> "$XML"
-fi
-
